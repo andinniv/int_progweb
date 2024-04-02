@@ -3,46 +3,81 @@
     <title> JM - Viagens - Contato</title>
     <meta charset="utf-8"/>
     <head></head>
-    <body>
-        <table border="0" align="center">
+    <body background="https://img.freepik.com/fotos-premium/conceito-de-estilo-de-vida-de-viajante-de-viagens-e-aventura_185193-86263.jpg">
+        <table border="0" align="center" width="70%" bgcolor="white" cellpadding="5" cellspacing="10">
             <tr>
                 <td> <img src="imagens/logo.png"></td>
-                <td align="right" width =" 500"> 
-                    <a href = "index.html"> Home |</a>
-                    <a href = "quemsomos.html"> Quem Somos |</a>
-                    <a href = "contato.html"> Contato |</a>
+                <td align="right" width="600"> 
+                    <button onclick="window.location.href='index.html'"style="font-size: medium;">Página Principal</button>
+                    <button onclick="window.location.href='destinos.html'"style="font-size: medium;">Destinos</button>
+                    <button onclick="window.location.href='quemsomos.html'"style="font-size: medium;">Quem Somos</button> 
+                    <button onclick="window.location.href='contato.html'"style="font-size: medium;">Contato</button>
+                    <button onclick="window.location.href='busca.html'"style="font-size: medium;">Buscar Pacotes</button>
                 </td>
+                
             </tr>
             <tr> 
                 <td colspan="2"><img src="imagens/contato.png" width="100%"></td>
             </tr>
             <tr>
-                <td colspan="2"> 
+                <td colspan="2" style="text-align: justify;"> 
+                    <h2>Entre em Contato</h2>
                     <p>
-                        <b>E-mail para contato: </b> JM@Gmail.com
+                        Bem-vindo à JM Viagens!<br><br>
+                        Estamos encantados em receber seu interesse em nossos serviços de viagem. Aqui na JM Viagens, valorizamos cada interação com nossos clientes e estamos dedicados a tornar sua experiência conosco tão suave e memorável quanto possível.
                     </p>
                     <p>
-                        Lorem Ipsum é simplesmente uma simulação de texto da indústria 
-                        tipográfica e de impressos, e vem sendo utilizado desde o século XVI,
-                        quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou 
-                        para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos,
-                        como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. 
-                        Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum,
-                        e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+                        Para entrar em contato conosco, você pode utilizar o formulário abaixo ou enviar um e-mail diretamente para nossa equipe de atendimento ao cliente em <a href="mailto:contato@jmviagens.com">contato@jmviagens.com</a>. Nossa equipe experiente está sempre pronta para responder suas perguntas, fornecer informações adicionais sobre nossos pacotes de viagem e ajudá-lo a planejar sua próxima aventura.
+                    </p>
                     <p>
-                        Lorem Ipsum é simplesmente uma simulação de texto da indústria 
-                        tipográfica e de impressos, e vem sendo utilizado desde o século XVI,
-                        quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou 
-                        para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos,
-                        como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. 
-                        Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum,
-                        e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+                        Além disso, se preferir falar com um de nossos agentes de viagens pessoalmente, sinta-se à vontade para ligar para o nosso número de atendimento ao cliente: +55 (86)1234-5678 Estamos disponíveis de segunda a sexta-feira, das 9h às 18h, para atender suas ligações e ajudá-lo com qualquer dúvida ou solicitação que você possa ter.
+                    </p>
+                    <p>
+                        Não importa se você está planejando uma escapada romântica, uma viagem em família ou uma aventura solo, estamos aqui para transformar seus sonhos de viagem em realidade. Entre em contato conosco hoje mesmo e deixe a JM Viagens cuidar de todos os detalhes para você!
+    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size: medium;">
+                    <form method="post">
+                        <h3>Entre em contato com uma de nossas Agencias!</h3>
+                        Nome: </br>
+                        <input type="text" name="nome"><br/><br/>
+    
+                        Email: </br>
+                        <input type="text" name="email"><br/><br/>
+    
+                        Whatsapp: </br>
+                        <input type="text" name="login"><br/><br/>
+    
+                        Assunto da Mensagem: </br>
+                        <input type="radio" value="consulta" name="pacotes">Consulta de pacotes de viagem<br/>
+                        <input type="radio" value="duvidas" name="duvidas">Dúvidas sobre reservas<br/>
+                        <input type="radio" value="feedback" name="feedback">Feedback<br/>
+                        <input type="radio" value="outros" name="outros">Outros<br/><br/>
+    
+                        Mensagem: </br>
+                        <textarea name="mensagem"rows="10" cols="30">           
+                        </textarea></br><br/>
+    
+                        Preferência de Contato:</br>
+                        <input type="checkbox" name="email">Email<br/>
+                        <input type="checkbox" name="telefone">Telefone<br/><br/>
+    
+                        Como você conheceu a JM Viagens?</br>
+                        <input type="checkbox" name="internet">Agencias<br/>
+                        <input type="checkbox" name="amigos">Amigos<br/>
+                        <input type="checkbox" name="redes sociais">Midias Sociais<br/>
+                        <input type="checkbox" name="outros">Outros<br/><br/>
+    
+                        <input type="submit" value="Enviar" style="font-size: medium;">
+    
+                    </form>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" align="center"> <h4> Todos os Direitos Reservados </h4></td>
             </tr>
-
         </table>
     </body>
 </html>

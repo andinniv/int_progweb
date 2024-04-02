@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <title> JM - Viagens - Busca</title>
+    <meta charset="utf-8"/>
+    <head></head>
+    <body background="https://img.freepik.com/fotos-premium/conceito-de-estilo-de-vida-de-viajante-de-viagens-e-aventura_185193-86263.jpg">
+        <table align="center" width="70%" cellspacing="10" bgcolor="white" cellspacing="5">
+            <tr>
+                <td> <img src="imagens/logo.png"></td>
+                <td align="right" width="600"> 
+                    <button onclick="window.location.href='index.html'"style="font-size: medium;">Página Principal</button>
+                    <button onclick="window.location.href='destinos.html'"style="font-size: medium;">Destinos</button>
+                    <button onclick="window.location.href='quemsomos.html'"style="font-size: medium;">Quem Somos</button> 
+                    <button onclick="window.location.href='contato.html'"style="font-size: medium;">Contato</button>
+                    <button onclick="window.location.href='busca.html'"style="font-size: medium;">Buscar Pacotes</button>
+                </td>
+            </tr>
+            <tr> 
+                <td colspan="2"><img src="https://fator.ag/blog/wp-content/uploads/2016/11/5-estrategias-para-atrair-visitantes-para-o-site-de-sua-agencia-de-viagens.jpg" width="100%"></td>
+            </tr>
+            <tr>
+                <td style="font-size: large;"> <b>Buscar Pacotes</b><br><br>
+                    <form method="get">
+                    <label for="origem">Origem:</label>
+                    <input type="text" id="origem" name="origem" required><br><br>
+
+                    <label for="destino">Destino:</label>
+                    <input type="text" id="destino" name="destino" required><br><br>
+
+                    <label for="dataPartida">Data de Partida:</label>
+                    <input type="date" id="dataPartida" name="dataPartida" required><br><br>
+
+                    <label for="dataRetorno">Data de Retorno:</label>
+                    <input type="date" id="dataRetorno" name="dataRetorno" required><br><br>
+
+                    <label for="quartos">Quartos:</label>
+                    <input type="number" id="quartos" name="quartos" min="1" required><br><br>
+
+                    <label for="adultos">Quantidade de Adultos:</label>
+                    <input type="number" id="adultos" name="adultos" min="1" required><br><br>
+
+                    <label for="criancas">Quantidade de Crianças:</label>
+                    <input type="number" id="criancas" name="criancas" min="0" required><br><br>
+                    <button type="submit" style="font-size: medium;">Buscar</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <h4> Todos os Direitos Reservados </h4></td>
+            </tr>
+
+        </table>
+    </body>
+</html>
