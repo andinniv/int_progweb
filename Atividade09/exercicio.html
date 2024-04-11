@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Atividade Posicionamento</title>
+    </head>
+        <style type="text/css">
+            body{
+                background: #61bd8c;
+
+            }
+
+            .menu{
+            font-size: 18px;
+            font-family:"Trebuchet MS",Helvetica, sans-serif ;
+            width: 100%;
+            margin: 10px;
+            
+            }
+
+            .caixa{
+                color: white;
+                float: left;
+            }
+
+            .conteudo{
+                background: white;
+                padding: 10px;
+                width: 500px;
+                height: 500px;
+                margin: 30px;
+                float: left;
+            }
+            .conteudo header{
+                margin: 10px;
+                width: 100%;
+            }
+
+            .conteudo footer{
+                padding-top: 50px;
+                width: 100%;
+            }
+        </style>
+    <body>
+        <div class="conteudo">
+            <header><h1 style="position: fixed; top: 1px; padding-top: 25px;">GeneriCo.</h1></header>
+            <div class="menu" style="padding-top: 35px;">
+                Home Categories Locations Contact
+            </div>
+            <div class="caixa" style="width: 25%; height: 400px; background: red;"></div>
+            <div class="caixa" style="width: 50%; height: 400px; background: yellow;"></div>
+            <div class="caixa" style="width: 25%; height: 400px; background: blue;"></div>
+            <footer>Home Categories Locations Contact</footer>
+        </div>
+        <div class="conteudo">
+            <div class="menu">
+                Home Categories Locations Contact
+            </div>
+            <header> <img src="https://pbs.twimg.com/media/Dsx9lVGX4AQUZOZ?format=jpg&name=large" width="480px"></header>
+            <div class="caixa" style="width: 75%; height: 300px; background: red;"></div>
+            <div class="caixa" style="width: 25%; height: 300px; background: white;"></div>
+            <div class="caixa" style="width: 10%; height: 300px; background: yellow; position: fixed; right:1px;margin-right: 120px;"></div>
+            <footer>Home Categories Locations Contact</footer>
+        </div>
+    
+    </body>
+</html>
