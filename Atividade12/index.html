@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .pessoa {
+      color: red;
+    }
+  </style>
+  <body>
+    <head>
+      <script type="text/javascript">
+        function mostrarvalor(componente) {
+          var valor = componente.getAtribute("data-idade");
+          alert(valor);
+        }
+      </script>
+    </head>
+    <ul>
+      <li
+        class="pessoa"
+        onclick="mostrarvalor(this)"
+        data-idade="20"
+        data-altura="190"
+      >
+        Jão
+      </li>
+      <li
+        class="pessoa"
+        onclick="mostrarvalor(this)"
+        data-idade="20"
+        data-altura="190"
+      >
+        Maria
+      </li>
+      <li
+        class="pessoa"
+        onclick="mostrarvalor(this)"
+        data-idade="20"
+        data-altura="190"
+      >
+        Juse
+      </li>
+    </ul>
+  </body>
+</html>
