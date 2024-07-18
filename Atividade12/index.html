@@ -1,44 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <style>
-    .pessoa {
-      color: red;
-    }
-  </style>
+    <style>
+      .pessoa {
+        margin-bottom: 20px;
+        color: red;
+      }
+      .pessoa[data-idade="30"] {
+        color: blue;
+      }
+      .pessoa-detalhes {
+        display: none;
+        margin-top: 10px;
+      }
+    </style>
   <body>
-    <head>
-      <script type="text/javascript">
-        function mostrarvalor(componente) {
-          var valor = componente.getAtribute("data-idade");
-          alert(valor);
-        }
-      </script>
-    </head>
+    <h1>Pessoas</h1>
+
     <ul>
       <li
         class="pessoa"
-        onclick="mostrarvalor(this)"
         data-idade="20"
+        data-cpf="123.456.789-00"
         data-altura="190"
       >
         Jão
+        <p class="pessoa-detalhes"></p>
+        <button onclick="mostrarDetalhes(this)">Mostrar Detalhes</button>
       </li>
       <li
         class="pessoa"
-        onclick="mostrarvalor(this)"
-        data-idade="20"
+        data-idade="30"
+        data-cpf="987.654.321-00"
         data-altura="190"
       >
         Maria
+        <p class="pessoa-detalhes"></p>
+        <button onclick="mostrarDetalhes(this)">Mostrar Detalhes</button>
       </li>
       <li
         class="pessoa"
-        onclick="mostrarvalor(this)"
         data-idade="20"
+        data-cpf="456.789.123-00"
         data-altura="190"
       >
         Juse
+        <p class="pessoa-detalhes"></p>
+        <button onclick="mostrarDetalhes(this)">Mostrar Detalhes</button>
       </li>
     </ul>
+
+    <script>
+      function mostrarDetalhes(button) {
+        const pessoa = button.parentElement;
+        const detalhes = pessoa.querySelector(".pessoa-detalhes");
+        const idade = pessoa.getAttribute("data-idade");
+        const cpf = pessoa.getAttribute("data-cpf");
+        const altura = pessoa.getAttribute("data-altura");
+
+        detalhes.textContent = `Idade: ${idade}, CPF: ${cpf}, Altura: ${altura}`;
+        detalhes.style.display = "block";
+      }
+    </script>
   </body>
 </html>
