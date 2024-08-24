@@ -18,6 +18,30 @@
       src="https://kit.fontawesome.com/4b55daf142.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .btn-custom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+        width: 80px;
+      }
+      .btn-custom i {
+        color: grey;
+      }
+      .col-sm-6 {
+        margin-bottom: 20px;
+      }
+      .container {
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
     <script
@@ -25,30 +49,68 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <div class="row">
-      <div class="col-sm-6">
-        <h3>Botões Padrões</h3>
-        <a href="" class="btn-default"> Botão link</a>
-        <input type="submit" class="btn-default" value="Botão submit" />
-        <button class="btn-default">Botão button</button>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Botões Padrões</h3>
+          <a href="" class="btn-default mb-2">Botão link</a>
+          <input type="submit" class="btn-default mb-2" value="Botão submit" />
+          <button class="btn-default">Botão button</button>
+        </div>
+        <div class="col-sm-6">
+          <h3>Tipos de Botões</h3>
+          <button class="btn-default btn-xs mb-2">Botão</button>
+          <button class="btn btn-primary btn-sm mb-2">Botão</button>
+          <button class="btn btn-success btn-md mb-2">Botão</button>
+          <button class="btn btn-danger btn-lg mb-2">Botão</button>
+          <button class="btn btn-warning mb-2">Botão</button>
+          <button class="btn btn-info mb-2">Botão</button>
+          <button class="btn btn-link">Botão</button>
+        </div>
       </div>
-      <div class="col-sm-6">
-        Tipos de Botões
-        <button class="btn-default btn-xs">Botão</button>
-        <button class="btn btn-primary btn-sm">Botão</button>
-        <button class="btn btn-success btn-md">Botão</button>
-        <button class="btn btn-danger btn-lg">Botão</button>
-        <button class="btn btn-warning">Botão</button>
-        <button class="btn btn-info">Botão</button>
-        <button class="btn btn-link">Botão</button>
+      <div class="btn-container">
+        <button class="btn-default btn-custom">
+          <i class="fa-solid fa-edit"></i>
+          Edit
+        </button>
+        <button class="btn-default btn-custom">
+          <i class="fa-solid fa-play"></i>
+          Play
+        </button>
+        <button class="btn-default btn-custom">
+          <i class="fa-solid fa-repeat"></i>
+          Repeat
+        </button>
+        <button class="btn-default btn-custom">
+          <i class="fa-solid fa-pause"></i>
+          Pause
+        </button>
+        <button class="btn-default btn-custom">
+          <i class="fa-solid fa-save"></i>
+          Save
+        </button>
       </div>
     </div>
-    <div class="col-sm-4">
-      Application buttons
-      <button class="btn-default">
-        <i class="fa-solid fa-play"></i>
-        Play
-      </button>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Imagem Responsiva</h3>
+          <img src="img/uvas200.png" alt="" class="img-fluid" />
+        </div>
+        <div class="col-sm-6">
+          <h3>Imagem Não Responsiva</h3>
+          <img src="img/uvas200.png" alt="" />
+        </div>
+        <div class="col-sm-6">
+          <h3>Formas em Imagem</h3>
+          <img src="img/uvas200.png" alt="" class="rounded" />
+        </div>
+        <div class="col-sm-6">
+          <h3>Formas em Imagem</h3>
+          <img src="img/uvas200.png" alt="" class="rounded-circle" />
+        </div>
+      </div>
     </div>
   </body>
 </html>
