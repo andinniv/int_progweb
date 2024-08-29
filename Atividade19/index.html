@@ -18,30 +18,6 @@
       src="https://kit.fontawesome.com/4b55daf142.js"
       crossorigin="anonymous"
     ></script>
-    <style>
-      .btn-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 20px;
-      }
-      .btn-custom {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 20px;
-        width: 80px;
-      }
-      .btn-custom i {
-        color: grey;
-      }
-      .col-sm-6 {
-        margin-bottom: 20px;
-      }
-      .container {
-        margin-top: 20px;
-      }
-    </style>
   </head>
   <body>
     <script
@@ -111,10 +87,17 @@
           <img src="img/uvas200.png" alt="" class="rounded-circle" />
         </div>
       </div>
-      <div style="display: flex">
+      <div style="display: flex; flex-direction: column; align-items: center">
         <div
           class="card"
-          style="align-items: center; align-content: space-between"
+          style="
+            align-items: center;
+            padding: 20px;
+            border: 1px solid gainsboro;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+          "
         >
           <img
             src="https://media.licdn.com/dms/image/v2/D4D03AQEqzeNBrzoRQw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697857747486?e=2147483647&v=beta&t=d6zvGWU3hE8mBCWAor7CFjcg6thhAKACy2FqjHneWNY"
@@ -122,17 +105,35 @@
             style="
               width: 150px;
               height: 150px;
-              margin: 20px;
+              margin-bottom: 20px;
               border: 6px solid gainsboro;
             "
           />
-          <p style="font-size: x-large">Yasmim Kelly</p>
-          <p style="color: gray">Técnico em contabilidade</p>
-          <div class="d-flex justify-content-between">
-            <h6>Followers</h6>
-            <span><h6>1200</h6></span>
+          <p style="font-size: x-large; margin-bottom: 5px">Yasmim Kelly</p>
+          <p style="color: gray; margin-bottom: 20px">
+            Técnico em contabilidade
+          </p>
+          <hr style="border: 1px solid #000; width: 100%; margin: 10px 0" />
+          <div style="width: 100%; text-align: center; margin-bottom: 10px">
+            <div class="d-flex justify-content-between w-100">
+              <h6>Followers</h6>
+              <h6 style="color: blueviolet">11,782</h6>
+            </div>
+            <hr style="border: 1px solid #000; width: 100%; margin: 10px 0" />
+            <div class="d-flex justify-content-between w-100">
+              <h6>Following</h6>
+              <h6 style="color: blueviolet">2,331</h6>
+            </div>
+            <hr style="border: 1px solid #000; width: 100%; margin: 10px 0" />
+            <div class="d-flex justify-content-between w-100">
+              <h6>Friends</h6>
+              <h6 style="color: blueviolet">1,457</h6>
+            </div>
+            <hr style="border: 1px solid #000; width: 100%; margin: 10px 0" />
           </div>
-          <div></div>
+          <button class="btn btn-success" style="width: 100%">
+            <i class="fa-solid fa-user-plus"></i>Follow
+          </button>
         </div>
       </div>
     </div>
