@@ -3,50 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Consulta CEP - ViaCEP</title>
+    <title>Projeto03 - ViaCEP</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4b55daf142.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <h2>Consulta de CEP</h2>
-    <form>
-      <label for="cep">Digite o CEP:</label>
-      <input type="text" id="cep" placeholder="Ex: 64019368" maxlength="8" />
-      <button type="button" id="mybtn">Consultar</button>
-      <button type="button" id="clearbtn">Limpar</button>
-    </form>
+  <body class="bg-light">
+    <div class="container mt-4">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="bg-white p-4 rounded shadow-sm">
+            <h2 class="mb-4 text-center">Consulta de CEP</h2>
+            <form>
+              <div class="mb-3">
+                <label for="cep" class="form-label">Digite o CEP:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cep"
+                  placeholder="Ex: 64019368"
+                  maxlength="8"
+                />
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="button" id="consultar" class="btn btn-dark">
+                  Consultar
+                  <i class="fa-solid fa-globe"></i>
+                </button>
+                <button type="button" id="limpar" class="btn btn-danger">
+                  Limpar
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
-    <h3>Endereço</h3>
-    <label for="logradouro">Logradouro:</label>
-    <input type="text" id="logradouro" readonly /><br />
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+          <div class="bg-white p-4 rounded shadow-sm">
+            <h3 class="mb-4 text-center">Endereço</h3>
+            <div class="mb-3">
+              <label for="logradouro" class="form-label">Logradouro:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="logradouro"
+                readonly
+              />
+            </div>
 
-    <label for="bairro">Bairro:</label>
-    <input type="text" id="bairro" readonly /><br />
+            <div class="mb-3">
+              <label for="bairro" class="form-label">Bairro:</label>
+              <input type="text" class="form-control" id="bairro" readonly />
+            </div>
 
-    <label for="cidade">Cidade:</label>
-    <input type="text" id="cidade" readonly /><br />
+            <div class="mb-3">
+              <label for="cidade" class="form-label">Cidade:</label>
+              <input type="text" class="form-control" id="cidade" readonly />
+            </div>
 
-    <label for="uf">Estado (UF):</label>
-    <input type="text" id="uf" readonly /><br />
+            <div class="mb-3">
+              <label for="uf" class="form-label">Estado (UF):</label>
+              <input type="text" class="form-control" id="uf" readonly />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       $(document).ready(function () {
-        $("#mybtn").click(function () {
+        $("#consultar").click(function () {
           var cep = $("#cep").val();
           var url = "https://viacep.com.br/ws/" + cep + "/json/";
 
           $.getJSON(url, function (retorno) {
-            if (!("erro" in retorno)) {
-              $("#logradouro").val(retorno.logradouro);
-              $("#bairro").val(retorno.bairro);
-              $("#cidade").val(retorno.localidade);
-              $("#uf").val(retorno.uf);
-            } else {
-              alert("CEP não encontrado.");
-            }
+            $("#logradouro").val(retorno.logradouro);
+            $("#bairro").val(retorno.bairro);
+            $("#cidade").val(retorno.localidade);
+            $("#uf").val(retorno.uf);
           });
         });
 
-        $("#clearbtn").click(function () {
+        $("#limpar").click(function () {
           $("#cep").val("");
           $("#logradouro").val("");
           $("#bairro").val("");
@@ -55,5 +102,6 @@
         });
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
