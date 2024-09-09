@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta CEP - ViaCEP</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Consulta de CEP</h2>
+    <form>
+      <label for="cep">Digite o CEP:</label>
+      <input type="text" id="cep" placeholder="Ex: 64019368" maxlength="8" />
+      <button type="button" id="mybtn">Consultar</button>
+      <button type="button" id="clearbtn">Limpar</button>
+    </form>
+
+    <h3>Endereço</h3>
+    <label for="logradouro">Logradouro:</label>
+    <input type="text" id="logradouro" readonly /><br />
+
+    <label for="bairro">Bairro:</label>
+    <input type="text" id="bairro" readonly /><br />
+
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" readonly /><br />
+
+    <label for="uf">Estado (UF):</label>
+    <input type="text" id="uf" readonly /><br />
+
+    <script>
+      $(document).ready(function () {
+        $("#mybtn").click(function () {
+          var cep = $("#cep").val();
+          var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+          $.getJSON(url, function (retorno) {
+            if (!("erro" in retorno)) {
+              $("#logradouro").val(retorno.logradouro);
+              $("#bairro").val(retorno.bairro);
+              $("#cidade").val(retorno.localidade);
+              $("#uf").val(retorno.uf);
+            } else {
+              alert("CEP não encontrado.");
+            }
+          });
+        });
+
+        $("#clearbtn").click(function () {
+          $("#cep").val("");
+          $("#logradouro").val("");
+          $("#bairro").val("");
+          $("#cidade").val("");
+          $("#uf").val("");
+        });
+      });
+    </script>
+  </body>
+</html>
