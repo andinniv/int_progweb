@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 26 - Teste de jQuery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      .box {
+        height: 200px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <h1 class="text-center">Testando jQuery com Bootstrap</h1>
+
+      <div class="row justify-content-between mt-4 g-3">
+        <div class="col-auto">
+          <div
+            class="box bg-white border rounded d-flex align-items-center justify-content-center"
+            id="elemento"
+          >
+            <p class="text-center">Caixa 1</p>
+          </div>
+          <button id="toggleElement" class="btn btn-dark mt-2 w-100">
+            Esconder/Mostrar
+          </button>
+        </div>
+        <div class="col-auto">
+          <div
+            class="box bg-info border rounded d-flex align-items-center justify-content-center"
+            id="box"
+          >
+            <p class="text-center">Caixa 2</p>
+          </div>
+          <button id="alterarCor" class="btn btn-dark mt-2 w-100">
+            Alterar Cor
+          </button>
+        </div>
+        <div class="col-auto">
+          <div
+            class="box bg-success border rounded d-flex align-items-center justify-content-center"
+            id="doubleClickMsg"
+          >
+            <p class="text-center">Caixa 3</p>
+          </div>
+          <button id="doubleClick" class="btn btn-dark mt-2 w-100">
+            Clique Duplo
+          </button>
+        </div>
+        <div class="col-auto">
+          <div
+            class="box bg-warning border rounded d-flex align-items-center justify-content-center"
+            id="hoverBox"
+          >
+            <p class="text-center">Passe o mouse</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $("#toggleElement").click(function () {
+        $("#elemento").toggle("slow");
+      });
+      $("#alterarCor").click(function () {
+        $("#box").toggleClass("bg-info bg-danger");
+      });
+      $("#doubleClick").dblclick(function () {
+        $("#doubleClickMsg").text("Sucesso!");
+      });
+      $("#hoverBox").hover(
+        function () {
+          $(this).text("Você está sobre a caixa!");
+        },
+        function () {
+          $(this).text("Passe o mouse");
+        }
+      );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
