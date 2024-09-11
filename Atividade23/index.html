@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade 23 - Manipulação de Boxes</title>
+    <title>Atividade 23 - Manipulação de Boxes e Arrays</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,47 +11,89 @@
   </head>
   <body class="container my-4">
     <h1 class="text-center">Listas de Box</h1>
-
     <div class="text-center my-4">
-      <button id="listarBox" class="btn btn-primary me-2">Listar Box</button>
-      <button id="verificarCor" class="btn btn-secondary">
+      <button id="listarBox" class="btn btn-dark me-2">Listar Box</button>
+      <button id="verificarCor" class="btn btn-dark">
         Verificar Cor da Box
       </button>
     </div>
-
     <div id="containerBox" class="row g-2"></div>
+    <h1 class="text-center mb-4">Manipulação de Arrays</h1>
 
+    <div class="mb-5">
+      <h2 class="text-center">Linguagens</h2>
+      <div id="container" class="mb-3"></div>
+      <div class="text-center">
+        <button class="btn btn-dark me-2" onclick="criaListaLiguagens()">
+          Listar Array
+        </button>
+        <button class="btn btn-dark" onclick="posicaoLiguagens()">
+          Posição no Array
+        </button>
+      </div>
+    </div>
+    <div class="mb-5">
+      <h2 class="text-center">Lista de Frutas</h2>
+      <div id="containerFrutas" class="mb-3"></div>
+      <div class="text-center">
+        <button class="btn btn-dark me-2" onclick="criaListaFrutas()">
+          Listar Array
+        </button>
+        <button class="btn btn-dark" onclick="posicaoFrutas()">
+          Posição no Array
+        </button>
+      </div>
+    </div>
+    <div class="mb-5">
+      <h2 class="text-center">Array Multidimensional</h2>
+      <div id="containerGenerico" class="mb-3"></div>
+      <div class="text-center">
+        <button class="btn btn-dark me-2" onclick="criaListaGenerica()">
+          Criar Array
+        </button>
+        <button class="btn btn-dark" onclick="posicaoItem()">
+          Posição no Array
+        </button>
+      </div>
+    </div>
+    <div class="mb-5">
+      <h2 class="text-center">Lista de Notas</h2>
+      <div id="containerNotas" class="mb-3"></div>
+      <div class="text-center">
+        <button class="btn btn-dark" onclick="consultarNota()">
+          Consultar Nota
+        </button>
+      </div>
+    </div>
     <script>
       var lista_boxes = [
         {
           cor: "red",
           conteudo: "Box 1",
-          borderRadius: "10px",
-          tamanho: "100px",
+          margin: "10px",
+          tamanho: "50px",
+          border: "1px solid black",
         },
         {
           cor: "green",
           conteudo: "Box 2",
-          borderRadius: "15px",
-          tamanho: "150px",
+          margin: "15px",
+          tamanho: "100px",
+          border: "1px solid black",
         },
         {
           cor: "blue",
           conteudo: "Box 3",
-          borderRadius: "20px",
-          tamanho: "200px",
+          margin: "20px",
+          tamanho: "150px",
+          border: "1px solid black",
         },
         {
           cor: "purple",
           conteudo: "Box 4",
-          borderRadius: "25px",
-          tamanho: "250px",
-        },
-        {
-          cor: "black",
-          conteudo: "Box 5",
-          borderRadius: "30px",
-          tamanho: "300px",
+          margin: "25px",
+          tamanho: "200px",
+          border: "1px solid black",
         },
       ];
 
@@ -60,9 +102,10 @@
         newBox.className = "col";
         newBox.style.backgroundColor = itemBox.cor;
         newBox.textContent = itemBox.conteudo;
-        newBox.style.borderRadius = itemBox.borderRadius;
+        newBox.style.margin = itemBox.margin;
         newBox.style.width = itemBox.tamanho;
         newBox.style.height = itemBox.tamanho;
+        newBox.style.border = itemBox.border;
         newBox.classList.add(
           "d-flex",
           "justify-content-center",
@@ -102,6 +145,128 @@
       document
         .getElementById("verificarCor")
         .addEventListener("click", verificarCor);
+      var liguagens = [
+        "Dart",
+        "PHP",
+        "Java",
+        "Pyton",
+        "Perl",
+        "Ruby on Rails",
+        "C ++",
+      ];
+
+      function criaListaLiguagens() {
+        const container = document.getElementById("container");
+        container.innerHTML = "";
+        liguagens.forEach(function (item, index) {
+          container.innerHTML += index + " - " + item + "<br>";
+        });
+      }
+
+      function posicaoLiguagens() {
+        var indice = prompt("Qual posição da lista deseja consultar?");
+        alert(liguagens[indice]);
+      }
+
+      var frutas = ["maçã", "banana", "laranja", "melancia", "manga"];
+
+      function criaListaFrutas() {
+        const containerFrutas = document.getElementById("containerFrutas");
+        containerFrutas.innerHTML = "";
+        frutas.forEach(function (item, index) {
+          containerFrutas.innerHTML += index + " - " + item + "<br>";
+        });
+      }
+
+      function posicaoFrutas() {
+        var indice = prompt("Qual posição da lista deseja consultar?");
+        alert(frutas[indice]);
+      }
+
+      var lista_generica = {
+        frutas: ["maçã", "banana", "laranja", "melancia", "manga"],
+        numeros: [100, 88, 39, 87, 3, 52, 98, 1202],
+        linguagens: ["Dart", "PHP", "Java", "Pyton", "Perl"],
+      };
+      var categoriaSelecionada;
+
+      function criaListaGenerica() {
+        let categoria = prompt(
+          "Informe a categoria (frutas, numeros, linguagens):"
+        );
+        if (lista_generica[categoria]) {
+          categoriaSelecionada = categoria;
+          let container = document.getElementById("containerGenerico");
+          container.innerHTML = "";
+          lista_generica[categoria].forEach(function (item, index) {
+            container.innerHTML += index + " - " + item + "<br>";
+          });
+        } else {
+          alert("Categoria não encontrada.");
+        }
+      }
+
+      function posicaoItem() {
+        if (categoriaSelecionada) {
+          let posicao = prompt(
+            "Informe a posição do item no array (0 a " +
+              (lista_generica[categoriaSelecionada].length - 1) +
+              "):"
+          );
+          posicao = parseInt(posicao);
+          if (
+            !isNaN(posicao) &&
+            posicao >= 0 &&
+            posicao < lista_generica[categoriaSelecionada].length
+          ) {
+            let item = lista_generica[categoriaSelecionada][posicao];
+            alert("O item na posição " + posicao + " é: " + item);
+          } else {
+            alert("Posição inválida.");
+          }
+        } else {
+          alert(
+            "Você deve primeiro selecionar uma categoria usando 'Criar Array'."
+          );
+        }
+      }
+
+      var notas = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0];
+
+      function criaListaNotas() {
+        let container = document.getElementById("containerNotas");
+        container.innerHTML = "";
+        notas.forEach(function (nota, index) {
+          container.innerHTML += "Nota " + (index + 1) + ": " + nota + "<br>";
+        });
+      }
+
+      function consultarNota() {
+        let posicao = prompt("Informe a posição da nota (1 a 10):");
+        posicao = parseInt(posicao) - 1;
+        if (!isNaN(posicao) && posicao >= 0 && posicao < notas.length) {
+          let nota = notas[posicao];
+          if (nota >= 7.0) {
+            alert(
+              "A nota na posição " +
+                (posicao + 1) +
+                " - Nota Aprovativa: " +
+                nota
+            );
+          } else {
+            alert(
+              "A nota na posição " +
+                (posicao + 1) +
+                " - Nota Reprovativa: " +
+                nota
+            );
+          }
+        } else {
+          alert("Posição inválida.");
+        }
+      }
+
+      window.onload = criaListaNotas;
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

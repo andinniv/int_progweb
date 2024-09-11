@@ -13,6 +13,45 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="estilo.css" />
+    <style>
+      /* Estilização personalizada para a modal */
+      .modal-dialog {
+        max-width: 400px; /* Limita a largura da modal */
+      }
+
+      .modal-content {
+        border-radius: 10px; /* Bordas arredondadas */
+      }
+
+      .modal-header {
+        border-bottom: none; /* Remove a borda inferior */
+      }
+
+      .modal-body {
+        padding: 2rem; /* Ajusta o espaçamento interno */
+      }
+
+      .modal-footer {
+        border-top: none; /* Remove a borda superior */
+        padding: 1rem; /* Ajusta o espaçamento interno */
+      }
+
+      .modal-content .btn {
+        border-radius: 5px; /* Bordas arredondadas para os botões */
+      }
+
+      .modal-content .form-control {
+        border-radius: 5px; /* Bordas arredondadas para os campos de entrada */
+      }
+
+      .modal-content .input-group-text {
+        border-radius: 5px; /* Bordas arredondadas para ícones */
+      }
+
+      .btn-end {
+        width: 100%; /* Botão ocupa toda a largura disponível */
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-light bg-danger text-light">
@@ -72,11 +111,12 @@
     >
       <div class="modal-dialog">
         <div class="modal-content login">
-          <div class="modal-content">
+          <div class="modal-header">
             <h6 class="modal-title text-secondary text-center">
               Sign in to start your session
             </h6>
-
+          </div>
+          <div class="modal-body">
             <div class="form-group">
               <div class="input-group mb-3">
                 <input
@@ -111,7 +151,7 @@
                 </span>
               </div>
             </div>
-            <div class="row">
+            <div class="row mb-3">
               <div class="col-md-9">
                 <div class="form-check text-secondary">
                   <input
@@ -119,19 +159,22 @@
                     class="form-check-input text-secondary"
                     id="Remember-Me"
                   />
-                  <label class="form-check-label" for="Remember-Me"
-                    >Remeber Me</label
-                  >
+                  <label class="form-check-label" for="Remember-Me">
+                    Remember Me
+                  </label>
                 </div>
               </div>
               <div class="col-md-3">
-                <button type="button" class="btn btn-dark btn-end">
+                <button
+                  type="button"
+                  class="btn btn-dark btn-end"
+                  style="width: max-content"
+                >
                   Sign In
                 </button>
               </div>
             </div>
             <h6 class="modal-title text-secondary text-center">- OR -</h6>
-
             <div class="d-grid gap-2 mb-3">
               <button
                 class="btn btn-primary w-100 d-flex align-items-center"
@@ -141,7 +184,6 @@
                 <span class="text-start w-100">Sign In with Facebook</span>
               </button>
             </div>
-
             <div class="d-grid gap-2 mb-1">
               <button
                 class="btn btn-danger w-100 d-flex align-items-center"
@@ -151,9 +193,8 @@
                 <span class="text-start w-100">Sign In with Gmail</span>
               </button>
             </div>
-
             <button type="button" class="btn btn-link">
-              I forgot my password
+              Forgot Your Password?
             </button>
             <button type="button" class="btn btn-link">
               Register a new membership

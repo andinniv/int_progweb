@@ -3,188 +3,225 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade 24 - Manipulação de Arrays</title>
+    <title>Aula 26 - Teste de jQuery</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <style>
+      .box {
+        height: 200px;
+        width: 200px;
+      }
+      .float-start {
+        float: left;
+        margin-right: 15px;
+      }
+    </style>
   </head>
-  <body class="container my-4">
-    <h1 class="text-center mb-4">Manipulação de Arrays</h1>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <h1 class="text-center">Testando jQuery com Bootstrap</h1>
+      <hr />
 
-    <div class="mb-5">
-      <h2 class="text-center">Linguagens</h2>
-      <div id="container" class="mb-3"></div>
-      <div class="text-center">
-        <button class="btn btn-primary me-2" onclick="criaListaLiguagens()">
-          Criar Array
-        </button>
-        <button class="btn btn-secondary" onclick="posicaoLiguagens()">
-          Posição no Array
-        </button>
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Parágrafos (p)</h4>
+          <p class="bg-primary" id="paragrafo1">Este é um parágrafo</p>
+          <p class="bg-success" id="paragrafo2">Este é outro parágrafo</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Divisões (div)</h4>
+          <div
+            style="height: 100px; width: 100px; background: #428bca"
+            class="float-start"
+            id="div1"
+          ></div>
+          <div
+            style="height: 100px; width: 100px; background: #5cb85c"
+            class="float-start"
+            id="div2"
+          ></div>
+        </div>
+        <div class="col-md-4">
+          <h4>Campos (input)</h4>
+          <input
+            id="campo1"
+            type="text"
+            placeholder="input ID 01"
+            class="form-control"
+          />
+          <input
+            id="campo2"
+            type="text"
+            placeholder="input ID 02"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col-md-4">
+          <button
+            type="button"
+            class="btn btn-danger"
+            onclick="exibirOcultarTAG('p',false)"
+          >
+            Esconder parágrafos
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            onclick="exibirOcultarTAG('p',true)"
+          >
+            Exibir parágrafos
+          </button>
+        </div>
+        <div class="col-md-4">
+          <button
+            type="button"
+            class="btn btn-danger"
+            onclick="exibirOcultarDivs(false)"
+          >
+            Esconder divs
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            onclick="exibirOcultarDivs(true)"
+          >
+            Exibir divs
+          </button>
+        </div>
+        <div class="col-md-4">
+          <button
+            type="button"
+            class="btn btn-danger"
+            onclick="exibirOcultarID('campo1',false)"
+          >
+            Esconder input ID 1
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            onclick="exibirOcultarID('campo2',false)"
+          >
+            Esconder input ID 2
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            onclick="exibirOcultarID('campo1',true)"
+          >
+            Exibir input ID 1
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            onclick="exibirOcultarID('campo2',true)"
+          >
+            Exibir input ID 2
+          </button>
+        </div>
+      </div>
+
+      <div class="row justify-content-between mt-4 g-3">
+        <div class="col-auto">
+          <div
+            class="box bg-white border rounded d-flex align-items-center justify-content-center"
+            id="elemento"
+          >
+            <p class="text-center">Caixa 1</p>
+          </div>
+          <button id="toggleElement" class="btn btn-dark mt-2 w-100">
+            Esconder/Mostrar
+          </button>
+        </div>
+        <div class="col-auto">
+          <div
+            class="box bg-info border rounded d-flex align-items-center justify-content-center"
+            id="box"
+          >
+            <p class="text-center">Caixa 2</p>
+          </div>
+          <button id="alterarCor" class="btn btn-dark mt-2 w-100">
+            Alterar Cor
+          </button>
+        </div>
+        <div class="col-auto">
+          <div
+            class="box bg-secondary border rounded d-flex align-items-center justify-content-center"
+            id="clickBox"
+          >
+            <p class="text-center">Caixa 3</p>
+          </div>
+          <button id="clickSimple" class="btn btn-dark mt-2 w-100">
+            Clique Simples
+          </button>
+        </div>
+        <div class="col-auto">
+          <div
+            class="box bg-success border rounded d-flex align-items-center justify-content-center"
+            id="doubleClickMsg"
+          >
+            <p class="text-center">Caixa 4</p>
+          </div>
+          <button id="doubleClick" class="btn btn-dark mt-2 w-100">
+            Clique Duplo
+          </button>
+        </div>
+        <div class="col-auto">
+          <div
+            class="box bg-warning border rounded d-flex align-items-center justify-content-center"
+            id="hoverBox"
+          >
+            <p class="text-center">Passe o mouse</p>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="mb-5">
-      <h2 class="text-center">Lista de Frutas</h2>
-      <div id="containerFrutas" class="mb-3"></div>
-      <div class="text-center">
-        <button class="btn btn-primary me-2" onclick="criaListaFrutas()">
-          Criar Array
-        </button>
-        <button class="btn btn-secondary" onclick="posicaoFrutas()">
-          Posição no Array
-        </button>
-      </div>
-    </div>
-
-    <div class="mb-5">
-      <h2 class="text-center">Array Multidimensional</h2>
-      <div id="containerGenerico" class="mb-3"></div>
-      <div class="text-center">
-        <button class="btn btn-primary me-2" onclick="criaListaGenerica()">
-          Criar Array
-        </button>
-        <button class="btn btn-secondary" onclick="posicaoItem()">
-          Posição no Array
-        </button>
-      </div>
-    </div>
-
-    <div class="mb-5">
-      <h2 class="text-center">Lista de Notas</h2>
-      <div id="containerNotas" class="mb-3"></div>
-      <div class="text-center">
-        <button class="btn btn-secondary" onclick="consultarNota()">
-          Consultar Nota
-        </button>
-      </div>
-    </div>
-
-    <script>
-      var liguagens = [
-        "Dart",
-        "PHP",
-        "Java",
-        "Pyton",
-        "Perl",
-        "Ruby on Rails",
-        "C ++",
-      ];
-
-      function criaListaLiguagens() {
-        const container = document.getElementById("container");
-        container.innerHTML = "";
-        liguagens.forEach(function (item, index) {
-          container.innerHTML += index + " - " + item + "<br>";
-        });
-      }
-
-      function posicaoLiguagens() {
-        var indice = prompt("Qual posição da lista deseja consultar?");
-        alert(liguagens[indice]);
-      }
-
-      var frutas = ["maçã", "banana", "laranja", "melancia", "manga"];
-
-      function criaListaFrutas() {
-        const containerFrutas = document.getElementById("containerFrutas");
-        containerFrutas.innerHTML = "";
-        frutas.forEach(function (item, index) {
-          containerFrutas.innerHTML += index + " - " + item + "<br>";
-        });
-      }
-
-      function posicaoFrutas() {
-        var indice = prompt("Qual posição da lista deseja consultar?");
-        alert(frutas[indice]);
-      }
-
-      var lista_generica = {
-        frutas: ["maçã", "banana", "laranja", "melancia", "manga"],
-        numeros: [100, 88, 39, 87, 3, 52, 98, 1202],
-        linguagens: ["Dart", "PHP", "Java", "Pyton", "Perl"],
-      };
-      var categoriaSelecionada;
-
-      function criaListaGenerica() {
-        let categoria = prompt(
-          "Informe a categoria (frutas, numeros, linguagens):"
-        );
-        if (lista_generica[categoria]) {
-          categoriaSelecionada = categoria;
-          let container = document.getElementById("containerGenerico");
-          container.innerHTML = "";
-          lista_generica[categoria].forEach(function (item, index) {
-            container.innerHTML += index + " - " + item + "<br>";
-          });
-        } else {
-          alert("Categoria não encontrada.");
-        }
-      }
-
-      function posicaoItem() {
-        if (categoriaSelecionada) {
-          let posicao = prompt(
-            "Informe a posição do item no array (0 a " +
-              (lista_generica[categoriaSelecionada].length - 1) +
-              "):"
-          );
-          posicao = parseInt(posicao);
-          if (
-            !isNaN(posicao) &&
-            posicao >= 0 &&
-            posicao < lista_generica[categoriaSelecionada].length
-          ) {
-            let item = lista_generica[categoriaSelecionada][posicao];
-            alert("O item na posição " + posicao + " é: " + item);
-          } else {
-            alert("Posição inválida.");
-          }
-        } else {
-          alert(
-            "Você deve primeiro selecionar uma categoria usando 'Criar Array'."
-          );
-        }
-      }
-
-      var notas = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0];
-
-      function criaListaNotas() {
-        let container = document.getElementById("containerNotas");
-        container.innerHTML = "";
-        notas.forEach(function (nota, index) {
-          container.innerHTML += "Nota " + (index + 1) + ": " + nota + "<br>";
-        });
-      }
-
-      function consultarNota() {
-        let posicao = prompt("Informe a posição da nota (1 a 10):");
-        posicao = parseInt(posicao) - 1;
-        if (!isNaN(posicao) && posicao >= 0 && posicao < notas.length) {
-          let nota = notas[posicao];
-          if (nota >= 7.0) {
-            alert(
-              "A nota na posição " +
-                (posicao + 1) +
-                " - Nota Aprovativa: " +
-                nota
-            );
-          } else {
-            alert(
-              "A nota na posição " +
-                (posicao + 1) +
-                " - Nota Reprovativa: " +
-                nota
-            );
-          }
-        } else {
-          alert("Posição inválida.");
-        }
-      }
-
-      window.onload = criaListaNotas;
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript">
+      function exibirOcultarTAG(tag, flag) {
+        if (flag) $(tag).show();
+        else $(tag).hide();
+      }
+
+      function exibirOcultarDivs(flag) {
+        if (flag) $("#div1, #div2").show();
+        else $("#div1, #div2").hide();
+      }
+
+      function exibirOcultarID(id, flag) {
+        if (flag) $("#" + id).show();
+        else $("#" + id).hide();
+      }
+
+      $("#toggleElement").click(function () {
+        $("#elemento").toggle("slow");
+      });
+      $("#alterarCor").click(function () {
+        $("#box").toggleClass("bg-info bg-danger");
+      });
+      $("#doubleClick").dblclick(function () {
+        $("#doubleClickMsg").text("Duplo Clique Detectado!");
+      });
+      $("#hoverBox").hover(
+        function () {
+          $(this).text("Você está sobre a caixa!");
+        },
+        function () {
+          $(this).text("Passe o mouse");
+        }
+      );
+      $("#clickSimple").click(function () {
+        $("#clickBox").text("Clique detectado!");
+      });
+    </script>
   </body>
 </html>
